@@ -9,7 +9,7 @@ from DeCodeMusic.helpers.decorators import sudo_users_only, errors
 downloads = os.path.realpath("downloads")
 raw = os.path.realpath("raw_files")
 
-@Client.on_message(command(["rmd", "rmdownloads", "cleardownloads"]) & ~filters.edited)
+@Client.on_message(command(["rmd", "rmdownloads", "cleardownloads"]))
 @errors
 @sudo_users_only
 async def clear_downloads(_, message: Message):
@@ -21,7 +21,7 @@ async def clear_downloads(_, message: Message):
     else:
         await message.reply_text("❌ **No files downloaded**")
         
-@Client.on_message(command(["clean", "wipe", "rmr"])
+@Client.on_message(command(["clean", "wipe", "rmr"]))
 @errors
 @sudo_users_only
 async def clear_raw(_, message: Message):
