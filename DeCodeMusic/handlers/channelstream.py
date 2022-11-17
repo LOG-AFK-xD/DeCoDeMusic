@@ -44,7 +44,7 @@ chat_id = None
 
 
 
-@Client.on_message(filters.command(["channelplaylist","cplaylist"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["channelplaylist","cplaylist"]) & filters.group)
 async def playlist(client, message):
     try:
       lel = await client.get_chat(message.chat.id)
@@ -116,7 +116,7 @@ def r_ply(type_):
     return mar
 
 
-@Client.on_message(filters.command(["channelcurrent","ccurrent"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["channelcurrent","ccurrent"]) & filters.group)
 async def ee(client, message):
     try:
       lel = await client.get_chat(message.chat.id)
@@ -133,7 +133,7 @@ async def ee(client, message):
         await message.reply("please turn on the voice chat first !")
 
 
-@Client.on_message(filters.command(["channelplayer","cplayer"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["channelplayer","cplayer"]) & filters.group)
 @authorized_users_only
 async def settings(client, message):
     playing = None
