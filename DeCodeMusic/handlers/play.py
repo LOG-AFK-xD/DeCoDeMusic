@@ -469,7 +469,7 @@ async def play(_, message: Message):
         return await lel.delete()
 
 
-@Client.on_message(filters.command("ytplay") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("ytplay") & filters.group)
 async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
@@ -630,7 +630,7 @@ async def ytplay(_, message: Message):
         return await lel.delete()
 
 
-@Client.on_message(filters.command("splay") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("splay") & filters.group)
 async def jiosaavn(client: Client, message_: Message):
     global que
     if message_.chat.id in DISABLED_GROUPS:
@@ -892,7 +892,7 @@ async def lol_cb(b, cb):
         )
         os.remove("final.png")
 
-@Client.on_message(filters.command("playlist") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("playlist") & filters.group)
 async def playlist(client, message):
     global que
     if message.chat.id in DISABLED_GROUPS:
