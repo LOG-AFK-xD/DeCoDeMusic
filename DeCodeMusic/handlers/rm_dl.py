@@ -21,7 +21,7 @@ async def clear_downloads(_, message: Message):
     else:
         await message.reply_text("❌ **No files downloaded**")
         
-@Client.on_message(command(["clean", "wipe", "rmr"]) & ~filters.edited)
+@Client.on_message(command(["clean", "wipe", "rmr"])
 @errors
 @sudo_users_only
 async def clear_raw(_, message: Message):
