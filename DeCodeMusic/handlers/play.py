@@ -959,7 +959,7 @@ def r_ply(type_):
     return mar
 
 
-@Client.on_message(filters.command("current") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("current") & filters.group)
 async def ee(client, message):
     if message.chat.id in DISABLED_GROUPS:
         return
@@ -971,7 +971,7 @@ async def ee(client, message):
         await message.reply("No VC instances running in this chat")
 
 
-@Client.on_message(filters.command("player") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("player") & filters.group)
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
@@ -993,7 +993,7 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    filters.command("musicplayer") & ~filters.edited & ~filters.bot & ~filters.private
+    filters.command("musicplayer") & ~filters.bot & ~filters.private
 )
 @authorized_users_only
 async def hfmm(_, message):
